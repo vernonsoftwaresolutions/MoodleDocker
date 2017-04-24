@@ -26,6 +26,8 @@ RUN cd /var/www; tar zxvf moodle-latest.tgz; mv /var/www/moodle /var/www/html
 RUN chown -R www-data:www-data /var/www/html/moodle
 RUN mkdir /var/moodledata
 RUN chown -R www-data:www-data /var/moodledata; chmod 777 /var/moodledata
+ADD start.sh start.sh
+ADD foreground.sh /etc/apache2/foreground.sh
 RUN chmod 755 /start.sh /etc/apache2/foreground.sh
 
 EXPOSE 22 80
