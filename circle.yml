@@ -12,12 +12,13 @@ dependencies:
     - docker build --rm=false -t vernonsoftwaresolutions/moodleapache:$CIRCLE_SHA1 .
 
 test:
-  # Validate the yaml file syntax
-  - ruby -e "require 'yaml';puts YAML.load_file('./circle.yml')"
-  - docker run -d -p 80:80 --name moodle vernonsoftwaresolutions/moodleapache:$CIRCLE_SHA1; sleep 10
-  - docker ps
-  - docker port moodle
-  - curl http://localhost/moodle
+  post:
+    # Validate the yaml file syntax
+    - ruby -e "require 'yaml';puts YAML.load_file('./circle.yml')"
+    - docker run -d -p 80:80 --name moodle vernonsoftwaresolutions/moodleapache:$CIRCLE_SHA1; sleep 10
+    - docker ps
+    - docker port moodle
+    - curl http://localhost/moodle
 
 deployment:
   development:
