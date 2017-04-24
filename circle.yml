@@ -9,7 +9,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build -t vernonsoftwaresolutions/moodleapache:$CIRCLE_SHA1 .
+    - docker build --rm=false -t vernonsoftwaresolutions/moodleapache:$CIRCLE_SHA1 .
 
 test:
   post:
