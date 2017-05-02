@@ -21,13 +21,16 @@ RUN apt-get -y install apache2 php5 php5-gd libapache2-mod-php5 postfix wget sup
 RUN apt-get -y install openssh-server
 RUN mkdir -p /var/run/sshd
 
+RUN easy_install supervisor
+ADD ./start.sh /start.sh
+ADD ./foreground.sh /etc/apache2/foreground.sh
+ADD ./supervisord.conf /etc/supervisord.conf
+# Moodle files
 ADD https://download.moodle.org/moodle/moodle-latest.tgz /var/www/moodle-latest.tgz
 RUN cd /var/www; tar zxvf moodle-latest.tgz; mv /var/www/moodle /var/www/html
 RUN chown -R www-data:www-data /var/www/html/moodle
 RUN mkdir /var/moodledata
 RUN chown -R www-data:www-data /var/moodledata; chmod 777 /var/moodledata
-ADD start.sh start.sh
-ADD foreground.sh /etc/apache2/foreground.sh
 RUN chmod 755 /start.sh /etc/apache2/foreground.sh
 
 EXPOSE 22 80
