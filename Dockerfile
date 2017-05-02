@@ -11,7 +11,6 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get install software-properties-common python-software-properties -y
-RUN add-apt-repository ppa:ondrej/php
 
 # Basic Requirements
 RUN apt-get -y install mysql-client pwgen python-setuptools curl git unzip
