@@ -12,6 +12,7 @@ RUN apt-get update
 RUN apt-get -y upgrade
 RUN sudo apt-get install software-properties-common python-software-properties -y
 RUN sudo add-apt-repository ppa:ondrej/php
+RUN apt-key update
 RUN apt-get update
 
 # Basic Requirements
