@@ -8,6 +8,8 @@ RUN ln -sf /bin/true /sbin/initctl
 # Let the conatiner know that there is no tty
 ENV DEBIAN_FRONTEND noninteractive
 
+RUN sudo apt-get install python-software-properties
+RUN sudo add-apt-repository ppa:ondrej/php
 RUN apt-get update
 RUN apt-get -y upgrade
  
