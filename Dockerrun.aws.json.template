@@ -1,12 +1,12 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "larse514/tcfjshifts:<TAG>",
+    "Name": "vernonsoftwaresolutions/moodleapache:<TAG>",
     "Update": "true"
   },
   "Ports": [
     {
-      "ContainerPort": "8080"
+      "ContainerPort": "80"
     }
   ]
 }
