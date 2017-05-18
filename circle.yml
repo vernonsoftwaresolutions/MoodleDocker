@@ -17,11 +17,12 @@ test:
     - docker run -d -p 80:80 --name moodle vernonsoftwaresolutions/moodleapache:$CIRCLE_BUILD_NUM; sleep 10
     - docker ps
     - docker port moodle
-    - curl http://localhost/moodle
+    - curl -L http://localhost/moodle
 
 deployment:
   development:
     branch: master
     commands: 
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS 
+      - docker push vernonsoftwaresolutions/moodleapache:$CIRCLE_BUILD_NUM
       - sh ./deploy.sh $EB_BUCKET $CIRCLE_BUILD_NUM
