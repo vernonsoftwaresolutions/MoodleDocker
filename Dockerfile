@@ -17,7 +17,7 @@ RUN apt-get -y install mysql-client pwgen python-setuptools curl git unzip
 
 # Moodle Requirements
 RUN apt-get -y install apache2 php php-gd libapache2-mod-php postfix wget supervisor php-pgsql vim curl libcurl3 libcurl3-dev php-curl php-xmlrpc php-intl php-mysql
-
+RUN apt-get install php7.0-xml -y
 # SSH
 RUN apt-get -y install openssh-server
 RUN mkdir -p /var/run/sshd
