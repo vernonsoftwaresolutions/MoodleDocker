@@ -9,7 +9,7 @@ DOCKERRUN_FILE=$VERSION-Dockerrun.aws.json
 echo $DOCKERRUN_FILE
 
 echo "zipping deployables"
-DEPLOYMENT="moodledeployment$VERSION"
+DEPLOYMENT="moodledeployment$VERSION.zip"
 zip -r $DEPLOYMENT $DOCKERRUN_FILE .ebextensions
 echo "created zip $DEPLOYMENT"
 aws s3 cp $DEPLOYMENT s3://$EB_BUCKET/$DEPLOYMENT
