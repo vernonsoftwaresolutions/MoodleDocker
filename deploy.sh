@@ -7,5 +7,9 @@ echo $VERSION
 #docker file
 DOCKERRUN_FILE=$VERSION-Dockerrun.aws.json
 echo $DOCKERRUN_FILE
-sed "s/<TAG>/$SHA1/" < Dockerrun.aws.json.template > $DOCKERRUN_FILE
-aws s3 cp $DOCKERRUN_FILE s3://$EB_BUCKET/$DOCKERRUN_FILE
+
+echo "zipping deployables"
+DEPLOYMENT="moodledeployment$VERSION"
+zip -r $DEPLOYMENT $DOCKERRUN_FILE .ebextensions
+echo "created zip $DEPLOYMENT"
+aws s3 cp $DEPLOYMENT s3://$EB_BUCKET/$DEPLOYMENT
