@@ -14,4 +14,5 @@ echo "zipping deployables"
 DEPLOYMENT="moodledeployment$VERSION.zip"
 zip -r $DEPLOYMENT $DOCKERRUN_FILE .ebextensions
 echo "created zip $DEPLOYMENT"
-aws s3 cp $DEPLOYMENT s3://$EB_BUCKET/$DEPLOYMENT
+aws s3 cp $DEPLOYMENT s3://$EB_BUCKET/moodle/
+aws s3 cp config.php s3://$EB_BUCKET/config/
