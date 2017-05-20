@@ -7,6 +7,10 @@ echo $VERSION
 #docker file
 DOCKERRUN_FILE=$VERSION-Dockerrun.aws.json
 echo $DOCKERRUN_FILE
+#replace with dockerhub tag
+-sed "s/<TAG>/$SHA1/" < Dockerrun.aws.json.template > $DOCKERRUN_FILE
+#print file
+cat $DOCKERRUN_FILE
 
 echo "zipping deployables"
 DEPLOYMENT="moodledeployment$VERSION.zip"
