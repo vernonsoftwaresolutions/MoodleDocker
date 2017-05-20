@@ -7,7 +7,7 @@ echo $VERSION
 #docker file
 DOCKERRUN_FILE=Dockerrun.aws.json
 echo $DOCKERRUN_FILE
-sed "s/<TAG>/$SHA1/" < Dockerrun.aws.json.template > $DOCKERRUN_FILE
+sed "s/<TAG>/$VERSION/" < Dockerrun.aws.json.template > $DOCKERRUN_FILE
 cat $DOCKERRUN_FILE
 
 echo "zipping deployables"
