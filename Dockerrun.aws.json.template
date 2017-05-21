@@ -11,7 +11,7 @@
   ],
    "Volumes": [
     {
-      "HostDirectory": "/config.php",
+      "HostDirectory": "/tmp/config.php",
       "ContainerDirectory": "/var/www/html/mooodle/"
     }
   ]
