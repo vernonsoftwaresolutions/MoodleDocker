@@ -8,11 +8,5 @@
     {
       "ContainerPort": "80"
     }
-  ],
-   "Volumes": [
-    {
-      "HostDirectory": "/tmp/config.php",
-      "ContainerDirectory": "/var/www/html/mooodle/"
-    }
   ]
 }
