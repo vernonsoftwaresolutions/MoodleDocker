@@ -12,7 +12,7 @@ Resources:
               DefaultValue: "aws-elasticbeanstalk-ec2-role"
 
 files: 
-  "/tmp/config.php":
+  "/tmp/config/config.php":
     mode: "000777"
     owner: ec2-user
     group: ec2-user

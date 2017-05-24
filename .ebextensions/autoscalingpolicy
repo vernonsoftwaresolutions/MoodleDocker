@@ -1,0 +1,19 @@
+option_settings:
+  aws:autoscaling:trigger:
+    LowerBreachScaleIncrement: '-1'
+  aws:autoscaling:trigger:
+    UpperBreachScaleIncrement: '1'
+  aws:autoscaling:trigger:
+    BreachDuration: '5'
+    EvaluationPeriods: '1'
+    LowerThreshold: '65'
+    UpperThreshold: '80'
+    MeasureName: CPUUtilization
+    Period: '5'
+    Statistic: Average
+    Unit: Percent
+  aws:autoscaling:asg:
+    Availability Zones: Any
+    Cooldown: '360'
+    MaxSize: '4'
+    MinSize: '2'
