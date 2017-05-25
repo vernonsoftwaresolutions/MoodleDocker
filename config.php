@@ -84,7 +84,7 @@ $CFG->dboptions = array(
 // If you need both intranet and Internet access please read
 // http://docs.moodle.org/en/masquerading
 
-$CFG->wwwroot   = 'http://ec2-34-206-1-224.compute-1.amazonaws.com/moodle';
+$CFG->wwwroot   = 'http://moodleapplication-env.us-east-1.elasticbeanstalk.com/moodle';
 
 
 //=========================================================================
