@@ -40,10 +40,10 @@ $CFG = new stdClass();
 
 $CFG->dbtype    = 'mysqli';      // 'pgsql', 'mariadb', 'mysqli', 'mssql', 'sqlsrv' or 'oci'
 $CFG->dblibrary = 'native';     // 'native' only at the moment
-$CFG->dbhost    = 'dbinstance.cffxov5w7rk6.us-east-1.rds.amazonaws.com';  // eg 'localhost' or 'db.isp.com' or IP
-$CFG->dbname    = 'tenant1db';     // database name, eg moodle
-$CFG->dbuser    = 'user';   // your database username
-$CFG->dbpass    = 'passwordthats8';   // your database password
+$CFG->dbhost    = '<DATABASEURL>';  // eg 'localhost' or 'db.isp.com' or IP
+$CFG->dbname    = '<DATABASENAME>';     // database name, eg moodle
+$CFG->dbuser    = '<DATABASEUSER>';   // your database username
+$CFG->dbpass    = '<DATABASEPASSWORD>';   // your database password
 $CFG->prefix    = 'mdl_';       // prefix to use for all table names
 $CFG->dboptions = array(
     'dbpersist' => false,       // should persistent database connections be
@@ -84,7 +84,7 @@ $CFG->dboptions = array(
 // If you need both intranet and Internet access please read
 // http://docs.moodle.org/en/masquerading
 
-$CFG->wwwroot   = 'http://moodleapplication-env.us-east-1.elasticbeanstalk.com/moodle';
+$CFG->wwwroot   = '<WWWROOT>';
 
 
 //=========================================================================
